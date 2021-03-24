@@ -1,0 +1,16 @@
+<div class="cat-list" *ngFor="let cateogry of categories">
+    <div class="cat">
+        <input type="checkbox" [(ngModel)]="cateogry.isSelected" (ngModelChange)="onToggleSelect()" name="checkbox{{cateogry.id}}">
+        <span [ngClass]="{'expanded' : !cateogry.collapsed && cateogry.children && cateogry.children.length > 0 , 'has-children' :cateogry.children && cateogry.children.length > 0} " (click)="toggleCollapsed(cateogry)">
+            {{cateogry.name}}
+        </span>
+    </div>
+    <div *ngIf="!cateogry.collapsed && cateogry.children && cateogry.children.length > 0" class="cat select-all">
+        <input type="checkbox" (change)="selectAll($event,cateogry); onToggleSelect();" [(ngModel)]="cateogry.selectAll"  name="checkboxSelectAll{{cateogry.id}}">
+        <span class="select-all">select all</span>
+    </div>
+    <div class="children" [hidden]="cateogry.collapsed">
+       <app-categories-list *ngIf="cateogry.children && cateogry.children.length > 0" (toggleSelect)="onToggleSelect()" [categories]="cateogry.children"></app-categories-list>
+    </div>
+</div>
+

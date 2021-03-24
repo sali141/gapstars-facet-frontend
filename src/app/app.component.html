@@ -1,4 +1,19 @@
-<div class="container">
-    <h1>Tree Facets</h1>
-    <app-facets [categories]="categories" ></app-facets>
+<div class="wrapper">
+    <div class="container">
+        <div class="left-panel">
+            <h1>Tree Facets
+                <button *ngIf="selectedCategories && selectedCategories.length > 0" (click)="removeAllSelected(categories)" class="btn">Remove all selected </button>
+            </h1>
+            <app-categories-list (toggleSelect)="toggleSelect($event)"  *ngIf="categories && categories.length > 0" [categories]="categories"></app-categories-list>
+        </div>
+        <div class="right-panel" *ngIf="selectedCategories && selectedCategories.length > 0" >
+            <h2>Selected Categories</h2>
+            <div class="selected-list">
+                <span *ngFor="let selectedCat of selectedCategories">
+                    {{selectedCat.name}}
+                </span>
+            </div>
+        </div>
+    </div>
+    
 </div>

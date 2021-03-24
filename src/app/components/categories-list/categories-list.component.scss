@@ -1,0 +1,35 @@
+.cat-list {
+    margin-left: 2em;
+    .cat {
+        display: flex;
+        align-items: center;
+
+        &.select-all{
+            margin-left: 2em;
+        }
+    }
+
+    input {
+        width: 18px;
+        height: 18px;
+    }
+  
+    span {
+        display: inline-block;
+        padding: 0.5em;
+        cursor: not-allowed;
+
+        &.expanded {
+            font-weight: 700;
+        }
+
+        &.has-children {
+            cursor: pointer;
+        }
+
+        &.select-all{
+            color: #bbb;
+        }
+    }
+  
+}
