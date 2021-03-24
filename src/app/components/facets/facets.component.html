@@ -1,0 +1,9 @@
+<div *ngFor="let parent of treeStructure">
+    <span (click)="toggleCollapsed(parent)">{{parent.name}} - {{parent.collapsed}}</span>
+    <div [hidden]="parent.collapsed" *ngFor="let child of parent.children">
+        - <span (click)="toggleCollapsed(child)">{{child.name}} - {{child.collapsed}}</span>
+        <div [hidden]="child.collapsed" *ngFor="let subChild of child.children">
+            - - <span>{{subChild.name}} - {{subChild.collapsed}}</span>
+        </div>
+    </div>
+</div>
