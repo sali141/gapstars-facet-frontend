@@ -1,5 +1,5 @@
 
-# Tree Facets - Gapstars - PHP / Angular - Technical Assessment
+# Gapstars – Assessment (Frontend App - Angular 9)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
 
@@ -10,8 +10,12 @@ You need node.js, npm  & angular CLI installed on your machine
 - Angular CLI = 9.1.15
 
 ## Installation
-clone the git repo and go to the folder `gapstars-facet-frontend`  
-`cd gapstars-facet-frontend`
+You should start by cloning the repository into your local machine.
+
+```bash
+git clone https://github.com/sali141/gapstars-facet-frontend.git 
+cd  gapstars-facet-frontend
+```
 
 Run below command to install the npm packages.  
 `npm install`
@@ -20,3 +24,5 @@ Run below command to install the npm packages.
 run below command to run the app on a dev server. It will navigate to `http://localhost:4200/`.  
 `ng serve --open`  
 The app will automatically reload if you change any of the source files.
+
+
