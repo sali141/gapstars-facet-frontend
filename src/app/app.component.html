@@ -1,4 +1,7 @@
-<div class="wrapper">
+<div class="loader-wrapper" *ngIf="isLoading">
+    <div class="loader"></div>
+</div>
+<div class="wrapper" *ngIf="!isLoading">
     <div class="container">
         <div class="left-panel">
             <h1>Tree Facets
